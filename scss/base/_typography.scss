@@ -1,3 +1,5 @@
+@use '../scss-utils/functions' as u;
+
 body {
     font-family: var(--ff-main);
     font-weight: var(--fw-regular);
@@ -8,12 +10,31 @@ h1,
 h2,
 h3,
 h4,
-input[type=number],
-.heading-m {
+label,
+input[type=number] {
     font-weight: var(--fw-semi-bold);
     color: var(--clr-secondary-1);
 }
 
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.1;
+}
+
 h1 {
-    
+    font-size: u.toRem(48px);
+}
+
+h2 {
+    font-size: u.toRem(32px);
+}
+
+h3 {
+    font-size: u.toRem(24px);
+}
+
+h4 {
+    font-size: u.toRem(20px);
 }
