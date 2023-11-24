@@ -1,0 +1,19 @@
+body {
+    font-family: var(--ff-main);
+    font-weight: var(--fw-regular);
+    color: var(--clr-secondary-2);
+}
+
+h1,
+h2,
+h3,
+h4,
+input[type=number],
+.heading-m {
+    font-weight: var(--fw-semi-bold);
+    color: var(--clr-secondary-1);
+}
+
+h1 {
+    
+}
