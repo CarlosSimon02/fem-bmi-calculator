@@ -1,0 +1,32 @@
+$breakpoints-up: (
+    'small': 375,
+    'medium': 768,
+    'desktop': 1440
+);
+
+$breakpoints-down: (
+    'small': 374.98,
+    'medium': 767.98,
+    'desktop': 1439.98
+);
+
+@mixin breakpoint-up($size) {
+    @media (min-width: map-get($breakpoints-up, $size)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size) {
+    @media (min-width: map-get($breakpoints-down, $size)) {
+        @content;
+    }
+}
+
+@function fluid($min-size, $max-size, $min-breakpoint, $max-breakpoint, $unit: vw) {
+    $slope: math.div($max-size - $min-size, map-get($breakpoints-up, $max-breakpoint) - map-get($breakpoints-up, $min-breakpoint));
+    $slope-to-unit: $slope * 100;
+    $intercept-rem: toRem($min-size - $slope * map-get($breakpoints, $min-breakpoint));
+    $min-size-rem: toRem($min-size);
+    $max-size-rem: toRem($max-size);
+    @return clamp(#{$min-size-rem}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{$max-size-rem});
+}
