@@ -1,0 +1,24 @@
+@use '../scss-utils/functions' as f;
+
+.main__bmi-mean {
+    margin-bottom: f.toRem(71.61);
+
+    &>.wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: f.toRem(48);
+
+    }
+
+    & img {
+        position: relative;
+        margin-left: -24px;
+        margin-right: -24px;
+        width: 100vw;
+        max-width: none;
+    }
+
+    & h2 {
+        margin-bottom: f.toRem(32);
+    }
+}

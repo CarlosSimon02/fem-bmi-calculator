@@ -1,0 +1,26 @@
+@use '../scss-utils/functions' as f;
+
+.input-div {
+    position: relative;
+}
+
+input[type=number] {
+    outline: none;
+    border: f.toRem(1) solid var(--clr-borders);
+    padding-inline-start: f.toRem(24);
+    padding-inline-end: f.toRem(83);
+    height: f.toRem(69);
+    border-radius: f.toRem(12);
+}
+
+.input-div h3 {
+    position: absolute;
+    top: 50%;
+    right: f.toRem(24);
+    transform: translateY(-50%);
+}
+
+.imperial-inputs {
+    display: none;
+    gap: f.toRem(16);
+}

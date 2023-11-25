@@ -8,7 +8,7 @@
     --clr-shadow: hsla(211, 40%, 69%, 25%);
 
     --gr-top: linear-gradient(
-        315deg, 
+        to left top, 
         hsla(216, 95%, 92%, 100%),
         hsla(183, 95%, 92%, 40%),
         hsla(183, 95%, 92%, 0)
@@ -18,6 +18,13 @@
         to right, 
         hsl(227, 92%, 58%),
         hsl(227, 100%, 67%)
+    ); 
+
+    --gr-advice: linear-gradient(
+        to left top, 
+        hsla(216, 95%, 92%, 25%),
+        hsla(183, 95%, 92%, 25%),
+        hsla(183, 95%, 92%, 0)
     ); 
 
     --ff-main: 'Inter', sans-serif;

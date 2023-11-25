@@ -37,7 +37,8 @@ h2 {
     font-size: f.toRem(32);
 }
 
-h3 {
+h3,
+input[type=number] {
     font-size: f.toRem(24);
 }
 
