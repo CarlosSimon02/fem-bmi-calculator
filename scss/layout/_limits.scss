@@ -1,0 +1,44 @@
+@use '../scss-utils/functions' as f;
+
+.main__limits {
+    &>.wrapper {
+        margin-block-start: f.toRem(72);
+        margin-block-end: f.toRem(96);
+        display: flex;
+        flex-direction: column;
+        gap: f.toRem(56);
+    }
+
+    &__desc {
+        text-align: center;
+
+        & h2 {
+            margin-bottom: f.toRem(32);
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: f.toRem(16);
+
+        &__item {
+            background-color: var(--clr-primary);
+            box-shadow: f.toRem(16) f.toRem(32) f.toRem(56) 0 var(--clr-shadow);;
+            padding: f.toRem(24);
+            border-radius: f.toRem(16);
+
+            & svg {
+                width: f.toRem(32);
+                height: auto;
+            }
+
+            & h4 {
+                display: inline-flex;
+                align-items: center;
+                gap: f.toRem(16);
+                margin-bottom: f.toRem(16);
+            }
+        }
+    }
+}

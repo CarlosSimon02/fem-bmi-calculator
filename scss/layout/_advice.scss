@@ -14,6 +14,11 @@
         flex-direction: column;
         gap: f.toRem(32);
 
+        & svg {
+            width: f.toRem(64);
+            height: auto;
+        }
+
         & h3 {
             margin-bottom: f.toRem(24);
         }

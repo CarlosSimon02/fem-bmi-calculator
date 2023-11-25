@@ -1,9 +1,8 @@
 @use '../scss-utils/functions' as f;
 
 .main__bmi-mean {
-    margin-bottom: f.toRem(71.61);
-
     &>.wrapper {
+        margin-bottom: f.toRem(71.61);
         display: flex;
         flex-direction: column;
         gap: f.toRem(48);
