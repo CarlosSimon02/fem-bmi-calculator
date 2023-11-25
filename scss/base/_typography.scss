@@ -1,4 +1,4 @@
-@use '../scss-utils/functions' as u;
+@use '../scss-utils/functions' as f;
 
 body {
     font-family: var(--ff-main);
@@ -23,18 +23,32 @@ h4 {
     line-height: 1.1;
 }
 
+h1,
+h2,
+h3 {
+    letter-spacing: -.05em;
+}
+
 h1 {
-    font-size: u.toRem(48);
+    font-size: f.toRem(48);
 }
 
 h2 {
-    font-size: u.toRem(32);
+    font-size: f.toRem(32);
 }
 
 h3 {
-    font-size: u.toRem(24);
+    font-size: f.toRem(24);
+}
+
+h3.unit-label {
+    color: var(--clr-accent);
 }
 
 h4 {
-    font-size: u.toRem(20);
+    font-size: f.toRem(20);
+}
+
+.label-s {
+    font-size: f.toRem(14);
 }

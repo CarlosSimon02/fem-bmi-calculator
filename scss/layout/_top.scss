@@ -1,0 +1,95 @@
+@use '../scss-utils/mixins' as m;
+@use '../scss-utils/functions' as f;
+
+.main__top {
+    & .wrapper {
+        padding-block: f.toRem(32) f.toRem(72);
+        position: relative;
+    }
+
+    & .wrapper::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: f.toRem(640);
+        background: var(--gr-top);
+        background-size: contain;
+        z-index: -1;
+        border-bottom-left-radius: f.toRem(35);
+        border-bottom-right-radius: f.toRem(35);
+    }
+
+    &__logo {
+        width: f.toRem(40);
+        aspect-ratio: 1 / 1;
+
+        @include m.breakpoint-down(large) {
+            margin-inline: auto;
+        }
+    }
+
+    &__flex {
+        margin-top: f.toRem(24);
+        display: flex;
+        gap: f.toRem(48);
+        
+        @include m.breakpoint-down(large) {
+            flex-direction: column;
+        }
+
+        &__desc {
+            &>h1 {
+                margin-bottom: f.toRem(24);
+            }
+
+            @include m.breakpoint-down(large) {
+                text-align: center;
+            }
+        }
+
+        &__calc {
+            background-color: var(--clr-primary);
+            box-shadow: f.toRem(16) f.toRem(32) f.toRem(56) 0 var(--clr-shadow);
+            padding: f.toRem(24);
+            border-radius: f.toRem(16);
+            display: grid;
+            gap: f.toRem(24);
+
+            &__units {
+                display: flex;
+                gap: f.toRem(24);
+                
+                &>* {
+                    flex: 1;
+                }
+            }
+
+            &__inputs {
+                display: flex;
+                flex-direction: column;
+                gap: f.toRem(16);
+
+                & .label-s {
+                    margin-bottom: f.toRem(8);
+                }
+            }
+
+            &__result {
+                background: var(--gr-result);
+                color: var(--clr-primary);
+                padding: f.toRem(32);
+                border-radius: f.toRem(16);
+
+                & * {
+                    color: inherit;
+                }
+
+                & h3 {
+                    margin-bottom: f.toRem(16);
+                }
+            }
+        }
+    }
+}

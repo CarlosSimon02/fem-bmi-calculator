@@ -1,0 +1,44 @@
+@use '../scss-utils/functions' as f;
+
+label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: f.toRem(18);
+}
+
+input[type=radio] {
+    cursor: inherit;
+    appearance: none;
+    width: f.toRem(31);
+    aspect-ratio: 1 / 1;
+    margin: 0;
+    border: f.toRem(1) solid var(--clr-borders);
+    border-radius: 100%;
+    transition: scale .1s linear;
+}
+
+label:hover>input[type=radio] {
+    border-color: var(--clr-accent);
+}
+
+label:active>input[type=radio] {
+    scale: .8;
+}
+
+input[type=radio]:checked {
+    background-color: var(--clr-accent-a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type=radio]:checked::after {
+    content: " ";
+    aspect-ratio: 1 / 1;
+    width: f.toRem(15);
+    background-color: var(--clr-accent);
+    position: absolute;
+    border-radius: 100%;
+}
+

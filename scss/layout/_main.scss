@@ -1,0 +1,9 @@
+@use '../scss-utils/functions' as u;
+
+.main {
+    & .wrapper {
+        max-width: u.toRem(1392);
+        margin-inline: auto;
+        padding-inline: u.toRem(24);
+    } 
+}

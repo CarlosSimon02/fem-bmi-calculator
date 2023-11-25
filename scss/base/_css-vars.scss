@@ -1,9 +1,24 @@
 :root {
-    --clr-primary: #FFFFFF;
-    --clr-secondary-1: #253347;
-    --clr-secondary-2: #5E6E85;
-    --clr-accent: #345FF6;
-    --clr-borders: #D8E2E7;
+    --clr-primary: hsl(0, 0%, 100%);
+    --clr-secondary-1: hsl(215, 31%, 21%);
+    --clr-secondary-2: hsl(215, 17%, 45%);
+    --clr-accent: hsl(227, 92%, 58%);
+    --clr-accent-a: hsl(227, 92%, 58%, 15%);
+    --clr-borders: hsl(200, 24%, 88%);
+    --clr-shadow: hsla(211, 40%, 69%, 25%);
+
+    --gr-top: linear-gradient(
+        315deg, 
+        hsla(216, 95%, 92%, 100%),
+        hsla(183, 95%, 92%, 40%),
+        hsla(183, 95%, 92%, 0)
+    ); 
+
+    --gr-result: linear-gradient(
+        to right, 
+        hsl(227, 92%, 58%),
+        hsl(227, 100%, 67%)
+    ); 
 
     --ff-main: 'Inter', sans-serif;
     --fw-regular: 400;
