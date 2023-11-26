@@ -1,20 +1,65 @@
 @use '../scss-utils/functions' as f;
+@use '../scss-utils/mixins' as m;
 
 .main__bmi-mean {
     &>.wrapper {
         margin-bottom: f.toRem(71.61);
         display: flex;
-        flex-direction: column;
         gap: f.toRem(48);
+        align-items: center;
+        justify-content: center;
 
+        @include m.breakpoint-down(medium) {
+            flex-direction: column;
+        }
+
+        @include m.breakpoint-up(medium) {
+            gap: f.toRem(75);
+            margin-left: -(f.toRem(120));
+        }
+
+        @include m.breakpoint-up(large) {
+            align-items: flex-end;
+            margin-left: auto;
+            gap: f.fluid(75,131,large,large-x);
+        } 
+
+        &>* {
+            @include m.breakpoint-up(large) {
+                flex: 1;
+                flex-basis: f.toRem(564);
+            }
+        }
+
+        &>div {
+            @include m.breakpoint-up(large) {
+                flex-basis: f.toRem(465);
+                margin-block-end: f.toRem(40);
+            } 
+        }
     }
 
     & img {
         position: relative;
-        margin-left: -24px;
-        margin-right: -24px;
-        width: 100vw;
-        max-width: none;
+        width: f.toRem(375);
+        height: 100%;
+
+
+        @include m.breakpoint-down(medium) {
+            margin-left: -24px;
+            margin-right: -24px;
+        }
+
+        @include m.breakpoint-up(medium) {
+            height: f.toRem(411.09);
+            width: auto;
+        }
+
+        @include m.breakpoint-up(large) {
+            height: auto;
+            width: 100%;
+            flex: 1 1 3600px;
+        }
     }
 
     & h2 {

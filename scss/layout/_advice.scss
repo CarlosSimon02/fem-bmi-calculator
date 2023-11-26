@@ -1,26 +1,49 @@
 @use '../scss-utils/functions' as f;
+@use '../scss-utils/mixins' as m;
 
 .main__advice {
     & .wrapper {
         background: var(--gr-advice);
-        padding-block: f.toRem(56);
+        padding-block: f.fluid(56,60,small,medium);
         display: flex;
-        flex-direction: column;
-        gap: f.toRem(40);
+        row-gap: f.toRem(40);
+        column-gap: f.toRem(32);
+
+        @include m.breakpoint-up(medium) {
+            padding-block-start: f.fluid(60,72,medium,large);
+            padding-block-end: f.fluid(60,96,medium,large);
+        }
+
+        @include m.breakpoint-down(large) {
+            flex-direction: column;
+        }
+
+        @include m.breakpoint-up(large) {
+            border-radius: f.toRem(35);
+        }
     }
 
     &__item {
         display: flex;
-        flex-direction: column;
-        gap: f.toRem(32);
+        flex-wrap: wrap;
+        row-gap: f.toRem(32);
+        column-gap: f.toRem(40);
 
         & svg {
             width: f.toRem(64);
             height: auto;
         }
 
-        & h3 {
-            margin-bottom: f.toRem(24);
+        &>div {
+            flex: 1 1 f.toRem(300);
+
+            &>h3 {
+                margin-bottom: f.toRem(24);
+            }
+
+            &>p {
+                max-width: 60ch;
+            }
         }
     }
 }

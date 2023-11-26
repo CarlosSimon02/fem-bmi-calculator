@@ -1,5 +1,19 @@
 @use 'sass:math';
 
+$breakpoints-up: (
+    'small': 375,
+    'medium': 768,
+    'large': 1100,
+    'large-x': 1400
+);
+
+$breakpoints-down: (
+    'small': 374.98,
+    'medium': 767.98,
+    'large': 1099.98,
+    'large-x': 1399.98
+);
+
 @function toRem($pxValue) {
     @if math.is-unitless($pxValue) {
         @return math.div($pxValue, 16) + rem;
@@ -14,4 +28,21 @@
     } @else {
         @error 'Don\'t use units when using the rem() function; only numbers.';
     }
+}
+
+@function fluid($min-size, $max-size, $min-breakpoint, $max-breakpoint, $unit: vw) {
+    $slope: math.div($max-size - $min-size, map-get($breakpoints-up, $max-breakpoint) - map-get($breakpoints-up, $min-breakpoint));
+    $slope-to-unit: $slope * 100;
+    $intercept-rem: toRem($min-size - $slope * map-get($breakpoints-up, $min-breakpoint));
+
+    $min-size-rem: toRem($min-size);
+    $max-size-rem: toRem($max-size);
+
+    @if $min-size <= $max-size {
+        @return clamp(#{$min-size-rem}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{$max-size-rem});
+    } @else {
+        @return clamp(#{$max-size-rem}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{$min-size-rem});
+    }
+
+    
 }

@@ -1,34 +1,28 @@
-@use 'functions' as u;
+@use 'sass:math';
+@use 'functions' as f;
 
 $breakpoints-up: (
     'small': 375,
     'medium': 768,
-    'large': 1440
+    'large': 1100,
+    'large-x': 1400
 );
 
 $breakpoints-down: (
     'small': 374.98,
     'medium': 767.98,
-    'large': 1439.98
+    'large': 1099.98,
+    'large-x': 1399.98
 );
 
 @mixin breakpoint-up($size) {
-    @media (min-width: u.toEm(map-get($breakpoints-up, $size))) {
+    @media (min-width: f.toEm(map-get($breakpoints-up, $size))) {
         @content;
     }
 }
 
 @mixin breakpoint-down($size) {
-    @media (max-width: u.toEm(map-get($breakpoints-down, $size))) {
+    @media (max-width: f.toEm(map-get($breakpoints-down, $size))) {
         @content;
     }
-}
-
-@function fluid($min-size, $max-size, $min-breakpoint, $max-breakpoint, $unit: vw) {
-    $slope: math.div($max-size - $min-size, map-get($breakpoints-up, $max-breakpoint) - map-get($breakpoints-up, $min-breakpoint));
-    $slope-to-unit: $slope * 100;
-    $intercept-rem: toRem($min-size - $slope * map-get($breakpoints, $min-breakpoint));
-    $min-size-rem: toRem($min-size);
-    $max-size-rem: toRem($max-size);
-    @return clamp(#{$min-size-rem}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{$max-size-rem});
 }

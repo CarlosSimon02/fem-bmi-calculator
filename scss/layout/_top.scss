@@ -3,8 +3,12 @@
 
 .main__top {
     & .wrapper {
-        padding-block: f.toRem(32) f.toRem(72);
+        padding-block: f.toRem(32) f.fluid(72,96,small,medium);
         position: relative;
+
+        @include m.breakpoint-up(medium) {
+            padding-block: f.fluid(32,75,medium,large) f.fluid(96,151,medium,large);
+        }   
     }
 
     & .wrapper::before {
@@ -19,6 +23,11 @@
         z-index: -1;
         border-bottom-left-radius: f.toRem(35);
         border-bottom-right-radius: f.toRem(35);
+
+        @include m.breakpoint-up(large) {
+            width: 70.25862068%;
+            height: f.toRem(737);
+        }
     }
 
     &__logo {
@@ -28,34 +37,63 @@
         @include m.breakpoint-down(large) {
             margin-inline: auto;
         }
+
+        @include m.breakpoint-up(medium) {
+            width: f.fluid(40,58.75,medium,large);
+        }
     }
 
     &__flex {
-        margin-top: f.toRem(24);
+        margin-top: f.fluid(24,40,small,medium);
         display: flex;
-        gap: f.toRem(48);
+        row-gap: f.fluid(48,40,small,medium);
+        column-gap: f.toRem(32);
         
         @include m.breakpoint-down(large) {
             flex-direction: column;
+            align-items: center;
+        }
+
+        &>* {
+            flex: 1;
         }
 
         &__desc {
+            display: flex;
+            flex-direction: column;
+            max-width: 70ch;
+
             &>h1 {
                 margin-bottom: f.toRem(24);
+
+                @include m.breakpoint-up(large) {
+                    margin-bottom: f.toRem(35);
+                }
+            }
+
+            &>p {
+                @include m.breakpoint-up(large) {
+                    max-width: f.toRem(465);
+                }
             }
 
             @include m.breakpoint-down(large) {
                 text-align: center;
+                align-items: center;
+            }
+
+            @include m.breakpoint-up(large) {
+                margin-top: f.toRem(99);
             }
         }
 
         &__calc {
             background-color: var(--clr-primary);
             box-shadow: f.toRem(16) f.toRem(32) f.toRem(56) 0 var(--clr-shadow);
-            padding: f.toRem(24);
+            padding: f.fluid(24,32,small,medium);
             border-radius: f.toRem(16);
             display: grid;
-            gap: f.toRem(24);
+            gap: f.fluid(24,32,small,medium);
 
             &__units {
                 display: flex;
@@ -68,11 +106,17 @@
 
             &__inputs {
                 display: flex;
-                flex-direction: column;
-                gap: f.toRem(16);
+                flex-direction: row;
+                column-gap: f.toRem(24);
+                row-gap: f.toRem(16);
+                flex-wrap: wrap;
 
                 & .label-s {
                     margin-bottom: f.toRem(8);
+                }
+
+                &>* {
+                    flex: 1 1 f.toRem(150);
                 }
             }
 
@@ -88,6 +132,16 @@
 
                 & h3 {
                     margin-bottom: f.toRem(16);
+                }
+
+                @include m.breakpoint-up(medium) {
+                    height: f.fluid(149,166,medium,large);
+                    padding-block: 0;
+                    border-top-right-radius: f.fluid(74.5,83,medium,large);
+                    border-bottom-right-radius: f.fluid(74.5,83,medium,large);
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
                 }
             }
         }

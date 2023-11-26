@@ -1,9 +1,14 @@
-@use '../scss-utils/functions' as u;
+@use '../scss-utils/functions' as f;
+@use '../scss-utils/mixins' as m;
 
 .main {
     & .wrapper {
-        max-width: u.toRem(1392);
+        max-width: f.toRem(1392);
         margin-inline: auto;
-        padding-inline: u.toRem(24);
-    } 
+        padding-inline: f.fluid(24,41,small,medium);
+
+        @include m.breakpoint-up(medium) {
+            padding-inline: f.fluid(41,116,medium,large);
+        }
+    }
 }

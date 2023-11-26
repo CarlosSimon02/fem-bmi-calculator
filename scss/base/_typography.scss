@@ -1,9 +1,12 @@
 @use '../scss-utils/functions' as f;
+@use '../scss-utils/mixins' as m;
+
 
 body {
     font-family: var(--ff-main);
     font-weight: var(--fw-regular);
     color: var(--clr-secondary-2);
+    font-size: f.toRem(16);
 }
 
 h1,
@@ -31,10 +34,19 @@ h3 {
 
 h1 {
     font-size: f.toRem(48);
+    max-width: 11ch;
+
+    @include m.breakpoint-up(medium) {
+        font-size: f.fluid(48,64,large,large-x);
+    }
 }
 
 h2 {
     font-size: f.toRem(32);
+
+    @include m.breakpoint-up(medium) {
+        font-size: f.fluid(32,48,large,large-x);
+    }
 }
 
 h3,

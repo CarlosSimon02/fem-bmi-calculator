@@ -13,12 +13,26 @@ input[type=number] {
     border-radius: f.toRem(12);
 }
 
+input[type=number]:hover {
+    border-color: var(--clr-accent);
+}
+
+input[type=number]:focus {
+    border-color: var(--clr-accent);
+    border-width: f.toRem(2);
+}
+
 .input-div h3 {
     position: absolute;
     top: 50%;
     right: f.toRem(24);
     transform: translateY(-50%);
+    pointer-events: none;
 }
+
+// .metric-inputs {
+//     display: none;
+// }
 
 .imperial-inputs {
     display: none;

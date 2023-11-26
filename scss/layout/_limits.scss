@@ -1,32 +1,77 @@
 @use '../scss-utils/functions' as f;
+@use '../scss-utils/mixins' as m;
 
 .main__limits {
     &>.wrapper {
-        margin-block-start: f.toRem(72);
+        margin-block-start: f.fluid(72,96,small,medium);
         margin-block-end: f.toRem(96);
         display: flex;
-        flex-direction: column;
         gap: f.toRem(56);
+        align-items: center;
+
+        @include m.breakpoint-up(medium) {
+            margin-block: f.fluid(96,120,medium,large);
+        }
+
+        @include m.breakpoint-down(large-x) {
+            flex-direction: column;
+        }
+
+        @include m.breakpoint-up(large-x) {
+            align-items: start;
+        }
     }
 
     &__desc {
-        text-align: center;
+        max-width: 70ch;
+
+        @include m.breakpoint-down(large-x) {
+            text-align: center;
+        }
+
+        @include m.breakpoint-up(large-x) {
+            max-width: f.toRem(564);
+        }
 
         & h2 {
             margin-bottom: f.toRem(32);
+
+            @include m.breakpoint-up(medium) {
+                margin-bottom: f.fluid(32,35,medium,large);
+            }
         }
     }
 
     &__content {
         display: flex;
-        flex-direction: column;
-        gap: f.toRem(16);
+        flex-wrap: wrap;
+        column-gap: f.toRem(16);
+        row-gap: f.fluid(16,24,small,medium);
+        justify-content: center;
+
+        @include m.breakpoint-up(medium) {
+            column-gap: f.fluid(16,32,small,medium);
+            row-gap: f.fluid(24,32,small,medium);
+        }
+
+        @include m.breakpoint-up(large-x) {
+            margin-left: f.toRem(-300);
+            justify-content: end;
+        }
 
         &__item {
+            flex: 1 1 f.toRem(300);
+            max-width: f.toRem(365);
             background-color: var(--clr-primary);
             box-shadow: f.toRem(16) f.toRem(32) f.toRem(56) 0 var(--clr-shadow);;
-            padding: f.toRem(24);
+            padding: f.fluid(24,32,small,medium);
             border-radius: f.toRem(16);
+
+            @include m.breakpoint-up(large-x) {
+                flex: initial;
+                width: f.toRem(365);
+                max-width: none;
+            }
 
             & svg {
                 width: f.toRem(32);
@@ -38,6 +83,26 @@
                 align-items: center;
                 gap: f.toRem(16);
                 margin-bottom: f.toRem(16);
+            }
+
+            &:nth-child(1) {
+                @include m.breakpoint-up(large-x) {
+                    margin-right: f.toRem(99);
+                }
+            }
+
+            &:nth-child(4) {
+                @include m.breakpoint-up(large-x) {
+                    position: relative;
+                    right: f.toRem(199);
+                }
+            }
+
+            &:nth-child(5) {
+                @include m.breakpoint-up(large-x) {
+                    position: relative;
+                    right: f.toRem(199);
+                }
             }
         }
     }

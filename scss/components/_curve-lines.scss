@@ -1,3 +1,6 @@
+@use '../scss-utils/mixins' as m;
+@use '../scss-utils/functions' as f;
+
 .main__bmi-mean .wrapper {
     position: relative;
 }
@@ -8,6 +11,24 @@
 
 .curve-line {
     position: absolute;
-    display: none;
+
+    @include m.breakpoint-down(large-x) {
+        display: none;
+    }
 }
 
+.curve-line-x1 {
+    width: f.toRem(85.831);
+    height: f.toRem(200.501);
+    object-fit: contain;
+    top: f.toRem(-52);
+    right: f.toRem(143);
+}
+
+.curve-line-x2 {
+    width: f.toRem(94);
+    height: f.toRem(122);
+    object-fit: contain;
+    top: f.toRem(251);
+    left: f.toRem(165);
+}
