@@ -14,7 +14,8 @@ h2,
 h3,
 h4,
 label,
-input[type=number] {
+input[type=number],
+.semi-bold {
     font-weight: var(--fw-semi-bold);
     color: var(--clr-secondary-1);
 }

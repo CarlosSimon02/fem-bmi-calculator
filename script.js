@@ -7,6 +7,9 @@ let metricInputs = document.getElementsByClassName("metric-inputs");
 let textfields = document.querySelectorAll("input[type=number]");
 let flexB = document.querySelectorAll(".main__top__flex__calc__inputs>*")
 
+let height;
+let weight;
+
 metricRadio.onclick = function() {
     for (var i = 0; i < textfields.length; i++) {
         textfields.item(i).value = "";
@@ -41,4 +44,8 @@ imperialRadio.onclick = function() {
     for (var i = 0; i < imperialInputs.length; i++) {
         imperialInputs.item(i).style.display = "flex";
     }
+}
+
+function calculateBMI() {
+    
 }
