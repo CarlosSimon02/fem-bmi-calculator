@@ -26,7 +26,7 @@ input[inputmode=numeric]:focus {
     border-width: f.toRem(2);
 }
 
-.input-div h3 {
+.input-div .unit-label {
     position: absolute;
     top: 50%;
     right: f.toRem(24);

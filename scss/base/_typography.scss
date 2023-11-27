@@ -1,7 +1,6 @@
 @use '../scss-utils/functions' as f;
 @use '../scss-utils/mixins' as m;
 
-
 body {
     font-family: var(--ff-main);
     font-weight: var(--fw-regular);
@@ -14,6 +13,8 @@ h2,
 h3,
 h4,
 label,
+.heading-s,
+.unit-label,
 input[inputmode=numeric],
 .semi-bold {
     font-weight: var(--fw-semi-bold);
@@ -23,13 +24,17 @@ input[inputmode=numeric],
 h1,
 h2,
 h3,
+.heading-s,
+.unit-label,
 h4 {
     line-height: 1.1;
 }
 
 h1,
 h2,
-h3 {
+h3,
+.heading-s,
+.unit-label {
     letter-spacing: -.05em;
 }
 
@@ -51,11 +56,13 @@ h2 {
 }
 
 h3,
-input[inputmode=numeric] {
+input[inputmode=numeric],
+.heading-s,
+.unit-label {
     font-size: f.toRem(24);
 }
 
-h3.unit-label {
+p.unit-label {
     color: var(--clr-accent);
 }
 
