@@ -49,7 +49,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[inputmode=numeric] {
   appearance: textfield;
   width: 100%;  
 }

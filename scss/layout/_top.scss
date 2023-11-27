@@ -141,14 +141,13 @@
                 }
 
                 & #welcome-state {
-                    display: none;
                     & h3 {
                         margin-bottom: f.toRem(16);
                     }
                 }
 
                 & #result-state {
-                    display: flex;
+                    display: none;
                     flex-wrap: wrap;
                     gap: f.toRem(24);
                     align-items: center;

@@ -14,7 +14,7 @@ h2,
 h3,
 h4,
 label,
-input[type=number],
+input[inputmode=numeric],
 .semi-bold {
     font-weight: var(--fw-semi-bold);
     color: var(--clr-secondary-1);
@@ -51,7 +51,7 @@ h2 {
 }
 
 h3,
-input[type=number] {
+input[inputmode=numeric] {
     font-size: f.toRem(24);
 }
 

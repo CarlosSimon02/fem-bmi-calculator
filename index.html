@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./dist/style.css">
   <title>Frontend Mentor | Body Mass Index Calculator</title>
-  <script src="./script.js" defer></script>
+  <script defer src="./script.js"></script>
 </head>
 <body>
   <main class="main">
@@ -38,16 +38,16 @@
               <div class="main__top__flex__calc__inputs__item">
                 <p class="label-s">Height</p>
                 <div class="input-div metric-inputs">
-                  <input type="number" id="cm" autocomplete="off">
+                  <input id="cm" autocomplete="off" inputmode="numeric">
                   <h3 class="unit-label">cm</h3>
                 </div>
                 <div class="imperial-inputs">
                   <div class="input-div">
-                    <input type="number" id="ft" autocomplete="off">
+                    <input id="ft" autocomplete="off" inputmode="numeric">
                     <h3 class="unit-label">ft</h3>
                   </div>
                   <div class="input-div">
-                    <input type="number" id="in" autocomplete="off">
+                    <input id="in" autocomplete="off" inputmode="numeric">
                     <h3 class="unit-label">in</h3>
                   </div>
                 </div>
@@ -55,16 +55,16 @@
               <div class="main__top__flex__calc__inputs__item">
                 <p class="label-s">Weight</p>
                 <div class="input-div metric-inputs">
-                  <input type="number" id="kg" autocomplete="off">
+                  <input id="kg" autocomplete="off" inputmode="numeric">
                   <h3 class="unit-label">kg</h3>
                 </div>
                 <div class="imperial-inputs"> 
                   <div class="input-div">
-                    <input type="number" id="st" autocomplete="off">
+                    <input id="st" autocomplete="off" inputmode="numeric">
                     <h3 class="unit-label">st</h3>
                   </div>
                   <div class="input-div">
-                    <input type="number" id="lbs" autocomplete="off">
+                    <input id="lbs" autocomplete="off" inputmode="numeric">
                     <h3 class="unit-label">lbs</h3>
                   </div>
                 </div>
@@ -78,9 +78,9 @@
               <div id="result-state">
                 <div>
                   <p class="semi-bold">Your BMI is...</p>
-                  <h1>22.0</h1>
+                  <h1 id="bmi-result"></h1>
                 </div>
-                <p>Your BMI suggests you’re a <span id="weight-class">healthy weight</span>. Your ideal weight is between <strong>9st 6lbs - 12st 10lbs</strong>.</p>
+                <p>Your BMI suggests you’re a <span id="weight-class"></span>. Your ideal weight is between <strong id="suggested-weight"></strong>.</p>
               </div>
             </div>
           </article>

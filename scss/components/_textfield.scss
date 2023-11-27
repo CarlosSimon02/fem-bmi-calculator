@@ -4,7 +4,7 @@
     position: relative;
 }
 
-input[type=number] {
+input[inputmode=numeric] {
     outline: none;
     border: f.toRem(1) solid var(--clr-borders);
     padding-inline-start: f.toRem(24);
@@ -13,11 +13,11 @@ input[type=number] {
     border-radius: f.toRem(12);
 }
 
-input[type=number]:hover {
+input[inputmode=numeric]:hover {
     border-color: var(--clr-accent);
 }
 
-input[type=number]:focus {
+input[inputmode=numeric]:focus {
     border-color: var(--clr-accent);
     border-width: f.toRem(2);
 }
