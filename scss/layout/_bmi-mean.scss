@@ -42,10 +42,10 @@
             margin-right: -24px;
         }
 
-        @include m.breakpoint-up(medium) {
-            height: f.toRem(411.09);
-            width: 100%;
-        }
+        // @include m.breakpoint-up(medium) {
+        //     height: f.toRem(411.09);
+        //     width: 100%;
+        // }
 
         @include m.breakpoint-up(large) {
             height: auto;
