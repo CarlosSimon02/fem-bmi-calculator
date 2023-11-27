@@ -44,12 +44,11 @@
 
         @include m.breakpoint-up(medium) {
             height: f.toRem(411.09);
-            width: auto;
+            width: 100%;
         }
 
         @include m.breakpoint-up(large) {
             height: auto;
-            width: 10%;
             flex: 1 1 f.toRem(564);
         }
     }
