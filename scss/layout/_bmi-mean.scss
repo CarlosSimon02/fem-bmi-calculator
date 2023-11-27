@@ -25,8 +25,11 @@
         } 
 
         &>div {
-            @include m.breakpoint-up(large) {
+            @include m.breakpoint-up(medium) {
                 flex: 1 1 f.toRem(465);
+            }
+
+            @include m.breakpoint-up(large) {
                 margin-block-end: f.toRem(40);
             } 
         }
@@ -42,13 +45,7 @@
             margin-right: -24px;
         }
 
-        // @include m.breakpoint-up(medium) {
-        //     height: f.toRem(411.09);
-        //     width: 100%;
-        // }
-
-        @include m.breakpoint-up(large) {
-            height: auto;
+        @include m.breakpoint-up(medium) {
             flex: 1 1 f.toRem(564);
         }
     }
