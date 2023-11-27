@@ -55,16 +55,18 @@
         }
 
         &>* {
-            flex: 1;
+            @include m.breakpoint-up(large) {
+                flex: 1 1 f.toRem(564);
+            }
         }
 
         &__desc {
             display: flex;
             flex-direction: column;
-            max-width: 70ch;
 
             &>h1 {
                 margin-bottom: f.toRem(24);
+                max-width: 70ch;
 
                 @include m.breakpoint-up(large) {
                     margin-bottom: f.toRem(35);
@@ -72,6 +74,8 @@
             }
 
             &>p {
+                max-width: 70ch;
+
                 @include m.breakpoint-up(large) {
                     max-width: f.toRem(465);
                 }
