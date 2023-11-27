@@ -24,16 +24,9 @@
             gap: f.fluid(75,131,large,large-x);
         } 
 
-        &>* {
-            @include m.breakpoint-up(large) {
-                flex: 1;
-                flex-basis: f.toRem(564);
-            }
-        }
-
         &>div {
             @include m.breakpoint-up(large) {
-                flex-basis: f.toRem(465);
+                flex: 1 1 f.toRem(465);
                 margin-block-end: f.toRem(40);
             } 
         }
@@ -43,7 +36,6 @@
         position: relative;
         width: f.toRem(375);
         height: 100%;
-
 
         @include m.breakpoint-down(medium) {
             margin-left: -24px;
@@ -56,9 +48,9 @@
         }
 
         @include m.breakpoint-up(large) {
+            flex: 1 1 f.toRem(564);
             height: auto;
             width: 100%;
-            flex: 1 1 3600px;
         }
     }
 
