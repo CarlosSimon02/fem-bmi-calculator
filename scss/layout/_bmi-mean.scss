@@ -3,7 +3,7 @@
 
 .main__bmi-mean {
     &>.wrapper {
-        margin-bottom: f.toRem(71.61);
+        margin-bottom: f.fluid(71.61,96,small,large);
         display: flex;
         gap: f.toRem(48);
         align-items: center;
