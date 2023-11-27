@@ -13,6 +13,10 @@ input[inputmode=numeric] {
     border-radius: f.toRem(12);
 }
 
+input[inputmode=numeric]::placeholder {
+    opacity: .4;
+}
+
 input[inputmode=numeric]:hover {
     border-color: var(--clr-accent);
 }
