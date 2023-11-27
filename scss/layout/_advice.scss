@@ -12,6 +12,7 @@
         @include m.breakpoint-up(medium) {
             padding-block-start: f.fluid(60,72,medium,large);
             padding-block-end: f.fluid(60,96,medium,large);
+            row-gap: f.fluid(40,45,medium,large);
         }
 
         @include m.breakpoint-down(large) {
