@@ -48,9 +48,9 @@
         }
 
         @include m.breakpoint-up(large) {
-            flex: 1 1 f.toRem(564);
+            // flex: 1 1 f.toRem(564);
             height: auto;
-            width: 100%;
+            width: 0;
         }
     }
 
